@@ -1,8 +1,7 @@
 {
-  "appTitle": "Localization Example",
-  "helloWorld": "Hello, World!",
-  "greeting": "Good morning!",
-  "@greeting": {
-    "description": "A simple good morning message"
-  }
+  "hello": "Hello",
+  "welcome": "Welcome to ChatApp",
+  "login": "Login",
+  "logout": "Logout",
+  "settings": "Settings"
 }

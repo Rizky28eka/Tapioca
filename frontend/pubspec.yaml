@@ -40,6 +40,7 @@ flutter:
 assets:
   - assets/images/
   - assets/svg/
+  - lib/l10n/arb/
   # Add other asset paths here
 
 # Consider adding fonts if needed (example)
