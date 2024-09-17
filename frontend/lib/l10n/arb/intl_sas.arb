@@ -1,0 +1,8 @@
+{
+  "appTitle": "Contoh Lokalisasi",
+  "helloWorld": "Ampure, Dunia!",
+  "greeting": "Selamat pagi!",
+  "@greeting": {
+    "description": "Ucapan pagi sederhana"
+  }
+}

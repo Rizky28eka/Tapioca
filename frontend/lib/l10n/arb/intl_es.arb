@@ -1,0 +1,8 @@
+{
+  "appTitle": "Ejemplo de Localización",
+  "helloWorld": "¡Hola, Mundo!",
+  "greeting": "¡Buenos días!",
+  "@greeting": {
+    "description": "Un simple mensaje de buenos días"
+  }
+}

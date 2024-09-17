@@ -1,0 +1,8 @@
+{
+ "appTitle": "Tuladha Lokalisasi",
+ "helloWorld": "Sugeng rawuh, Jagad!",
+ "greeting": "Sugeng enjing!",
+ "@greeting": {
+   "description": "Sugeng enjing sing prasaja"
+ }
+}

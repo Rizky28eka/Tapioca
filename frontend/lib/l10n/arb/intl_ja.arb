@@ -1,0 +1,8 @@
+{
+  "appTitle": "ローカリゼーション例",
+  "helloWorld": "こんにちは、世界！",
+  "greeting": "おはようございます！",
+  "@greeting": {
+    "description": "シンプルなおはようメッセージ"
+  }
+}
