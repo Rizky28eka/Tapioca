@@ -1,28 +1,36 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:frontend/l10n/app_localizations_delegate.dart';
 
-class AppLocalizations {
-  AppLocalizations(this.locale);
+class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
+  const AppLocalizationsDelegate();
 
-  final Locale locale;
+  @override
+  bool isSupported(Locale locale) => [
+        'en',
+        'es',
+        'fr',
+        'de',
+        'zh',
+        'ja',
+        'ar',
+        'ru',
+        'pt',
+        'it',
+        'nl',
+        'su',
+        'jv',
+        'min',
+        'bug',
+        'mks',
+        'ace',
+        'sas'
+      ].contains(locale.languageCode);
 
-  static AppLocalizations? of(BuildContext context) {
-    return Localizations.of<AppLocalizations>(context, AppLocalizations);
+  @override
+  Future<AppLocalizations> load(Locale locale) {
+    return AppLocalizations.load(locale);
   }
 
-  static Map<String, String> _localizedStrings = {};
-
-  Future<void> load() async {
-    final String jsonString =
-        await rootBundle.loadString('lib/l10n/arb/${locale.languageCode}.arb');
-    final Map<String, dynamic> jsonMap = json.decode(jsonString);
-    _localizedStrings =
-        jsonMap.map((key, value) => MapEntry(key, value.toString()));
-  }
-
-  String? get(String key) {
-    return _localizedStrings[key];
-  }
+  @override
+  bool shouldReload(AppLocalizationsDelegate old) => false;
 }

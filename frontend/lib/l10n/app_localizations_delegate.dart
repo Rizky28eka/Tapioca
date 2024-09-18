@@ -1,22 +1,40 @@
 import 'package:flutter/material.dart';
-import 'app_localizations.dart';
+import 'package:frontend/generated/intl/messages_all.dart';
+import 'package:intl/intl.dart';
 
-class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
-  const AppLocalizationsDelegate();
+class AppLocalizations {
+  AppLocalizations(this.localeName);
 
-  @override
-  bool isSupported(Locale locale) {
-    return ['en', 'es', 'fr', 'de', 'zh', 'ja', 'ar', 'ru', 'pt', 'it', 'nl', 'su', 'jv', 'bal', 'bat', 'min', 'bug', 'mak', 'ace', 'sas']
-        .contains(locale.languageCode);
+  final String localeName;
+
+  static Future<AppLocalizations> load(Locale locale) {
+    final String name = locale.countryCode?.isEmpty ?? true
+        ? locale.languageCode
+        : locale.toString();
+    return initializeMessages(name).then((_) {
+      return AppLocalizations(name);
+    });
   }
 
-  @override
-  Future<AppLocalizations> load(Locale locale) async {
-    final localizations = AppLocalizations(locale);
-    await localizations.load();
-    return localizations;
+  static AppLocalizations? of(BuildContext context) {
+    return Localizations.of<AppLocalizations>(context, AppLocalizations);
   }
 
-  @override
-  bool shouldReload(covariant LocalizationsDelegate<AppLocalizations> old) => false;
+  String get hello {
+    return Intl.message(
+      'Hello',
+      name: 'hello',
+      locale: localeName,
+    );
+  }
+
+  String get welcome {
+    return Intl.message(
+      'Welcome to ChatApp',
+      name: 'welcome',
+      locale: localeName,
+    );
+  }
+
+  // Tambahkan getter untuk setiap string yang ada di file .arb
 }
