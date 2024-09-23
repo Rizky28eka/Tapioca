@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/apps/utils/theme.dart';
 import 'package:get/get.dart';
-import 'app/bindings/main_bindings.dart';
-import 'app/routes/app_route.dart';
+
+import 'apps/bindings/main_bindings.dart';
+import 'apps/routes/app_route.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,12 +17,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'ChatApp',
       initialBinding: MainBindings(),
-      initialRoute: '/',
+      initialRoute: '/login',
       getPages: AppRoutes.routes,
-      theme: ThemeData.light(),
-      darkTheme: ThemeData.dark(),
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
     );
   }

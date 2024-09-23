@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frontend/app/controllers/splash_controller.dart';
+import 'package:frontend/apps/controllers/splash_controller.dart';
 import 'package:get/get.dart';
 
 class SplashPage extends StatelessWidget {

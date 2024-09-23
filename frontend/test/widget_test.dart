@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 void main() {
   testWidgets('Test if MyApp loads correctly', (WidgetTester tester) async {
     // Build the app
-    await tester.pumpWidget(MyApp());
+    await tester.pumpWidget(const MyApp());
 
     // Verifikasi apakah GetMaterialApp terload dengan benar
     expect(find.byType(GetMaterialApp), findsOneWidget);
