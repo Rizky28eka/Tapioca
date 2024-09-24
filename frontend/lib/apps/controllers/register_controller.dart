@@ -3,17 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class RegisterController extends GetxController {
-  // TextEditingControllers untuk input field
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController =
       TextEditingController();
 
-  // Rx variabel untuk mengatur visibilitas password
   var isPasswordHidden = true.obs;
 
-  // Validator untuk email dan password
   String? _validateEmail(String email) {
     if (email.isEmpty) {
       return 'Email cannot be empty';
@@ -32,7 +29,6 @@ class RegisterController extends GetxController {
     return null;
   }
 
-  // Function to validate form inputs
   bool _validateForm(
       String username, String email, String password, String confirmPassword) {
     if (username.isEmpty) {
@@ -60,7 +56,6 @@ class RegisterController extends GetxController {
     return true;
   }
 
-  // Function to create account
   void createAccount() {
     String username = usernameController.text.trim();
     String email = emailController.text.trim();
@@ -68,18 +63,16 @@ class RegisterController extends GetxController {
     String confirmPassword = confirmPasswordController.text;
 
     if (_validateForm(username, email, password, confirmPassword)) {
-      // Logika registrasi, misalnya panggil API atau simpan ke database
       Get.snackbar(
         'Account Created',
         'Your account has been successfully created!',
         snackPosition: SnackPosition.BOTTOM,
       );
-      // Navigasi ke halaman login atau home setelah sukses registrasi
+
       Get.offNamed('/login');
     }
   }
 
-  // Function to show error message in SnackBar
   void _showErrorMessage(String message) {
     Get.snackbar(
       'Error',
@@ -90,12 +83,10 @@ class RegisterController extends GetxController {
     );
   }
 
-  // Function to toggle password visibility
   void togglePasswordVisibility() {
     isPasswordHidden.value = !isPasswordHidden.value;
   }
 
-  // Dispose controllers when the controller is closed
   @override
   void onClose() {
     usernameController.dispose();

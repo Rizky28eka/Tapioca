@@ -14,7 +14,6 @@ class AppRoutes {
     GetPage(name: splash, page: () => const SplashPage()),
     GetPage(name: login, page: () => LoginPage()),
     GetPage(name: register, page: () => RegisterPage()),
-    GetPage(name: forgotpassword, page: () => ForgotPasswordPage()),
-    // GetPage(name: forgotpassword, page: () => ()),
+    GetPage(name: forgotpassword, page: () => const ForgotPasswordPage()),
   ];
 }

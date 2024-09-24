@@ -10,7 +10,7 @@ class SplashController extends GetxController {
   }
 
   void _navigateToLogin() async {
-    await Future.delayed(const Duration(seconds: 3)); // Tunggu 3 detik
-    Get.offNamed(AppRoutes.login); // Pindah ke halaman login
+    await Future.delayed(const Duration(seconds: 3));
+    Get.offNamed(AppRoutes.login);
   }
 }
