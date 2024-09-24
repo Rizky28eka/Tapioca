@@ -126,7 +126,7 @@ class LoginPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(12),
                         ),
                       ),
-                      child: Text('Login'),
+                      child: const Text('Login'),
                     ),
                     const SizedBox(height: 16),
                     Row(

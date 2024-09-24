@@ -182,7 +182,7 @@ class RegisterPage extends StatelessWidget {
                               borderRadius: BorderRadius.circular(12),
                             ),
                           ),
-                          child: Text('Register'),
+                          child: const Text('Register'),
                         )),
                     const SizedBox(height: 16),
                     Row(
